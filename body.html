@@ -1,65 +1,61 @@
-<div class="wrap">
-<div class="header"><div class="logo">🐍</div><h1>SNAKE XENZIA PRO</h1></div>
-<div class="subtitle">3D ARCADE EDITION</div>
+<div class="app">
 
-<div class="setup glass">
-  <input id="playerName" maxlength="16" placeholder="Your player name" aria-label="Player name">
-  <select id="mode" aria-label="Game mode">
-    <option value="classic">Classic Mode</option>
-    <option value="obstacles">Obstacle Mode</option>
-    <option value="rush">Speed Rush</option>
-  </select>
-</div>
-
-<div class="stats">
-  <div class="stat glass"><div class="label">⭐ SCORE</div><div class="value" id="score">0</div></div>
-  <div class="stat glass"><div class="label">🏆 BEST</div><div class="value" id="best">0</div></div>
-  <div class="stat glass"><div class="label">⚡ LEVEL</div><div class="value" id="level">1</div><div class="bar"><i id="lvlbar"></i></div></div>
-</div>
-
-<div class="gamebox">
-  <canvas id="game"></canvas>
-  <div class="overlay" id="overlay">
-    <h2 id="overlayTitle">READY?</h2>
-    <p id="overlayText">Eat the food 🍎 to grow your snake.<br>Avoid walls and your own tail.<br>Collect golden bonus food for extra points!</p>
-    <button class="primary" id="startBtn">▶ PLAY NOW</button>
+  <div class="top">
+    <div class="chip"><span>SCORE</span><b id="score">0</b></div>
+    <div class="chip"><span>BEST</span><b id="best">0</b></div>
+    <div class="chip"><span>LEVEL</span><b id="level">1</b><i id="lvlbar"></i></div>
+    <button id="pauseBtn" type="button">⏸</button>
   </div>
-</div>
 
-<div class="toolbar">
-  <select id="difficulty" aria-label="Difficulty">
-    <option value="175">Easy</option>
-    <option value="135" selected>Medium</option>
-    <option value="100">Hard</option>
-  </select>
-  <button id="pauseBtn">⏸ Pause</button>
-  <button id="restartBtn">↻ Restart</button>
-  <button id="themeBtn">🎨 Theme</button>
-</div>
+  <div class="board">
+    <canvas id="game"></canvas>
+    <div id="count"></div>
 
-<div class="controls">
-  <button class="up" data-dir="up">▲</button>
-  <button class="left" data-dir="left">◀</button>
-  <button class="down" data-dir="down">▼</button>
-  <button class="right" data-dir="right">▶</button>
-</div>
+    <div class="overlay" id="overlay">
 
-<div class="hint">ARROW BUTTONS • SWIPE ON THE BOARD • KEYBOARD ARROWS</div>
+      <div class="screen" id="menuScreen">
+        <div class="logo">🐍</div>
+        <h1>SNAKE XENZIA PRO</h1>
+        <input id="playerName" maxlength="16" placeholder="Your player name" aria-label="Player name">
+        <div class="row">
+          <select id="mode" aria-label="Game mode">
+            <option value="classic">Classic</option>
+            <option value="obstacles">Obstacles</option>
+            <option value="rush">Speed Rush</option>
+          </select>
+          <select id="difficulty" aria-label="Difficulty">
+            <option value="175">Easy</option>
+            <option value="135" selected>Medium</option>
+            <option value="100">Hard</option>
+          </select>
+        </div>
+        <button class="primary" id="startBtn" type="button">▶ PLAY</button>
+        <div class="row">
+          <button id="themeBtn" type="button">🎨 Neon</button>
+          <button id="soundBtn" type="button">🔊 Sound On</button>
+        </div>
+        <div class="lb" id="leaderboard"></div>
+        <div class="tip">Swipe on the board or use the arrows. 🍎 +10 &nbsp; ⭐ +30</div>
+      </div>
 
-<div class="panels">
-  <div class="panel glass">
-    <h3>🏆 TOP SCORES ON THIS DEVICE</h3>
-    <div id="leaderboard">No scores yet. Play a round!</div>
+      <div class="screen" id="msgScreen" style="display:none">
+        <h2 id="overlayTitle"></h2>
+        <p id="overlayText"></p>
+        <button class="primary" id="resumeBtn" type="button"></button>
+        <div class="row">
+          <button id="restartBtn" type="button">↻ Restart</button>
+          <button id="menuBtn" type="button">☰ Menu</button>
+        </div>
+      </div>
+
+    </div>
   </div>
-  <div class="panel glass">
-    <h3>🎯 HOW TO PLAY</h3>
-    <p>🍎 Red food: +10 points</p>
-    <p>⭐ Golden bonus: +30 points</p>
-    <p>🚧 Obstacle mode: avoid blocks</p>
-    <p>⚡ Speed Rush: faster as you score</p>
-    <span class="badge">Best score saves in this browser</span>
-  </div>
-</div>
 
-<div class="foot">SNAKE XENZIA PRO • 3D EDITION</div>
+  <div class="dpad">
+    <button class="up" data-dir="up" type="button">▲</button>
+    <button class="left" data-dir="left" type="button">◀</button>
+    <button class="down" data-dir="down" type="button">▼</button>
+    <button class="right" data-dir="right" type="button">▶</button>
+  </div>
+
 </div>
