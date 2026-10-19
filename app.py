@@ -18,7 +18,13 @@ st.markdown("""
 [data-testid="stStatusWidget"] { display: none !important; }
 .stApp { background: #050d14; }
 .block-container { padding: 0 !important; max-width: 100% !important; }
-iframe { border: 0 !important; }
+[data-testid="stVerticalBlock"] { gap: 0 !important; }
+iframe {
+    border: 0 !important;
+    width: 100% !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -35,8 +41,11 @@ page = (
     "maximum-scale=1, user-scalable=no'>"
     "<style>" + read("style.css") + "</style></head><body>"
     + read("body.html")
-    + "<script>" + read("game1.js") + "\n" + read("game2.js") + "</script>"
-    "</body></html>"
+    + "<script>"
+    + read("game1.js") + "\n"
+    + read("game2.js") + "\n"
+    + read("game3.js")
+    + "</script></body></html>"
 )
 
-components.html(page, height=1300, scrolling=True)
+components.html(page, height=700, scrolling=False)
