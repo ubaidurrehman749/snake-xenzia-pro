@@ -19,7 +19,7 @@ body {
 body.classic { background: radial-gradient(circle at top, #e1edd0, #a9bd94); }
 
 .app {
-  height: 100%; max-width: 480px; margin: 0 auto; padding: 8px 10px 10px;
+  height: 100%; max-width: 480px; margin: 0 auto; padding: 8px 10px 78px;
   display: flex; flex-direction: column; gap: 8px;
 }
 .top { display: flex; gap: 6px; align-items: stretch; }
