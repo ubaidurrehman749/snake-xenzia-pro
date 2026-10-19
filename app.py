@@ -5,7 +5,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 st.set_page_config(
-    page_title="Snake Xenzia Pro",
+    page_title="Snake Xenzia Pro | Ubaid Ur Rehman",
     page_icon="🐍",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -17,7 +17,7 @@ st.markdown("""
 [data-testid="stToolbar"],
 [data-testid="stDecoration"],
 [data-testid="stStatusWidget"] { display: none !important; }
-.stApp { background: #050d14; }
+.stApp { background: #070b1f; }
 .block-container { padding: 0 !important; max-width: 100% !important; }
 [data-testid="stVerticalBlock"] { gap: 0 !important; }
 iframe {
@@ -56,6 +56,17 @@ for name, text in texts.items():
 if problems:
     st.warning("Fix these files in GitHub:\n\n" + "\n".join("- " + p for p in problems))
 
+THEME_JS = """<script>
+Object.assign(THEMES.neon, {
+  bgA: "#2a1b6e", bgB: "#070b1f",
+  floorA: "#1b2150", floorB: "#151a42",
+  wall: "#6d5dfc", obstacle: "#94a3b8",
+  head: "#eafff3", body: "#43f5a0", tail: "#14b8a6",
+  food: "#ff4d6d", bonus: "#fbbf24", glow: true
+});
+</script>
+"""
+
 ERR = """<script>
 var MAP = __MAP__;
 window.addEventListener('error', function (e) {
@@ -89,6 +100,8 @@ for name in JS_FILES:
     start = page.count("\n") + 2
     mapping.append([name, start, texts[name].count("\n") + 1])
     page += "<script>\n" + texts[name] + "\n</script>\n"
+    if name == "game1.js":
+        page += THEME_JS
 page += "</body></html>"
 page = page.replace("__MAP__", json.dumps(mapping))
 
