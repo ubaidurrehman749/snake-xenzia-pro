@@ -115,4 +115,4 @@ body.classic .primary { background: linear-gradient(135deg, #3a7437, #214b2b); c
 @media (max-height: 640px) {
   .dpad { grid-template-rows: repeat(2, 42px); grid-template-columns: repeat(3, 58px); }
   .chip b { font-size: 18px; }
-                             }
+                              }
